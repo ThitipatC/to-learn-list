@@ -20,7 +20,7 @@ const props = defineProps<SubjectProp>()
         <Icon :name="iconName" size="1.5em" />
       </div>
       <div>
-        <a href="" class="text-gray-800 font-medium">{{ subject }}</p>
+        <a href="" class="text-gray-800 font-medium">{{ subject }}</a>
       </div>
     </div>
     <span :class="status === Status.InProgress ? 'text-green-500' : 'text-red-500'">{{status}}</span>
