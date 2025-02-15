@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref} from 'vue'
-import toLearnItem from '~/components/Subject.vue'
+
 
     const topic = ref<string>("")
 </script>
