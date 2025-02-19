@@ -1,17 +1,22 @@
-<script setup lang="ts">
-enum Status {
+
+<script lang="ts">
+export enum Status {
   InProgress = 'in progress',
   Completed = 'completed',
   Pending = 'pending'
 }
 
-interface SubjectProp {
-  subject: string
-  status: Status
-  iconName: string
-}
+export type SubjectProp = {
+  subject: string;
+  status: Status;
+  iconName: string;
+};
+
+</script>
+<script setup lang="ts">
 const props = defineProps<SubjectProp>()
 </script>
+
 
 <template>
   <div class="flex justify-between items-center p-3 border rounded-md bg-gray-50">

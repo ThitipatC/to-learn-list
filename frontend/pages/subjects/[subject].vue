@@ -5,18 +5,13 @@ const route = useRoute();
 console.log(`route params are ${route.params}`)
 const subject = route.params.subject
 // fetch for corresponding topics and subtopics
-const topics = ref([{topic_name : "react1", subtopics : [{subtopic_name: "s1", refs : ["s1-1.com", "s1-2.com"]}]},{topic_name : "react2", subtopics : [{subtopic_name: "s2", refs : ["s2-1.com", "s2-2.com"]}]}])
-
-// onMounted(() => {
-//   if (!localStorage.getItem("authToken")) {
-//     router.push('/');
-//   }
-//   fetch('/your-api-endpoint') // Replace with your actual API endpoint
-//     .then(res => res.json())
-//     .then(data => {
-//       subjects.value = data.data; // Adjust based on your API response structure
-//     })
-// });
+const topics = ref([])
+onMounted(() => {
+   if (typeof window !== "undefined") {
+      console.log(JSON.parse(localStorage.getItem("topic")).topics);
+      topics.value = JSON.parse(localStorage.getItem("topic")).topics
+   }
+});
 </script>
 
 <template>
