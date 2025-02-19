@@ -2,8 +2,11 @@
 from flask import Flask, jsonify, request 
 from flask_restful import Resource, Api 
 from routes.Tasks import Task
+from flask_cors import CORS 
+
 # creating the flask app 
-app = Flask(__name__) 
+app = Flask(__name__)
+CORS(app, resources={r"/tasks/*": {"origins": "http://localhost:3000"}})
 # creating an API object 
 api = Api(app) 
   
