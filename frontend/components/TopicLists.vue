@@ -17,7 +17,7 @@ const props = defineProps<TopicListProps>()
   <div v-if="isClicked">
         <ul>
         <li class="mx-12 list-disc" v-for="(subtopic, index) in subtopics" :key="index">
-            <SubTopic :subtopic_name="subtopic.subtopic_name" :refs = "subtopic.refs"/>
+            <SubTopic :subtopic_name="subtopic.sub_topic_name" :refs = "subtopic.refs"/>
         </li>
         </ul>        
   </div>
